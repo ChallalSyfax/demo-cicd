@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Tests & couverture
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Outils qualité / cache
+.ruff_cache/
+
+# Artefacts CI/CD (SBOM, rapports de scan) générés plus tard
+sbom.*.json
+trivy-*.json
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
