@@ -1,0 +1,7 @@
+# Dépendances de développement et d'outillage (tests, couverture, qualité).
+# Inclut les dépendances runtime.
+-r requirements.txt
+
+pytest==8.3.3
+pytest-cov==5.0.0
+ruff==0.6.9
