@@ -1,0 +1,11 @@
+strategy,workflow_file,run_id,run_number,run_attempt,event,head_branch,status,conclusion,created_at,run_started_at,updated_at,duration_total_s,billable_minutes_linux
+C,pipeline-c-conditional.yml,30856459357,12,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:53Z,2026-08-03T21:52:53Z,2026-08-03T21:56:46Z,233.0,5
+C,pipeline-c-conditional.yml,30856455889,11,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:49Z,2026-08-03T21:52:49Z,2026-08-03T21:56:30Z,221.0,5
+C,pipeline-c-conditional.yml,30856451524,10,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:46Z,2026-08-03T21:52:46Z,2026-08-03T21:56:14Z,208.0,5
+C,pipeline-c-conditional.yml,30856448059,9,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:42Z,2026-08-03T21:52:42Z,2026-08-03T21:56:26Z,224.0,5
+C,pipeline-c-conditional.yml,30856443950,8,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:39Z,2026-08-03T21:52:39Z,2026-08-03T21:56:11Z,212.0,5
+C,pipeline-c-conditional.yml,30856440322,7,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:36Z,2026-08-03T21:52:36Z,2026-08-03T21:56:07Z,211.0,5
+C,pipeline-c-conditional.yml,30856436130,6,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:32Z,2026-08-03T21:52:32Z,2026-08-03T21:56:08Z,216.0,5
+C,pipeline-c-conditional.yml,30856432468,5,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:29Z,2026-08-03T21:52:29Z,2026-08-03T21:56:11Z,222.0,5
+C,pipeline-c-conditional.yml,30856428652,4,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:26Z,2026-08-03T21:52:26Z,2026-08-03T21:55:52Z,206.0,5
+C,pipeline-c-conditional.yml,30855321035,3,1,workflow_dispatch,main,completed,success,2026-08-03T21:36:09Z,2026-08-03T21:36:09Z,2026-08-03T21:37:01Z,52.0,5

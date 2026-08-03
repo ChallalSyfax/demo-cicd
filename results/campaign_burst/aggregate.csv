@@ -1,0 +1,4 @@
+strategy,n_runs,success_count,success_rate_pct,duration_mean_s,duration_median_s,duration_min_s,duration_max_s,duration_stdev_s,billable_minutes_mean,billable_minutes_median
+A,10,10,100.0,50.0,50.0,31.0,75.0,14.7,1.0,1.0
+B,10,10,100.0,177.5,188.0,47.0,212.0,47.2,5.0,5.0
+C,10,10,100.0,200.5,214.0,52.0,233.0,52.8,5.0,5.0

@@ -1,0 +1,11 @@
+strategy,workflow_file,run_id,run_number,run_attempt,event,head_branch,status,conclusion,created_at,run_started_at,updated_at,duration_total_s,billable_minutes_linux
+A,pipeline-a-sequential.yml,30856388965,10,1,workflow_dispatch,main,completed,success,2026-08-03T21:51:52Z,2026-08-03T21:51:52Z,2026-08-03T21:53:07Z,75.0,1
+A,pipeline-a-sequential.yml,30856385428,9,1,workflow_dispatch,main,completed,success,2026-08-03T21:51:49Z,2026-08-03T21:51:49Z,2026-08-03T21:52:42Z,53.0,1
+A,pipeline-a-sequential.yml,30856381540,8,1,workflow_dispatch,main,completed,success,2026-08-03T21:51:46Z,2026-08-03T21:51:46Z,2026-08-03T21:52:38Z,52.0,1
+A,pipeline-a-sequential.yml,30856378023,7,1,workflow_dispatch,main,completed,success,2026-08-03T21:51:42Z,2026-08-03T21:51:42Z,2026-08-03T21:52:25Z,43.0,1
+A,pipeline-a-sequential.yml,30856374370,6,1,workflow_dispatch,main,completed,success,2026-08-03T21:51:39Z,2026-08-03T21:51:39Z,2026-08-03T21:52:27Z,48.0,1
+A,pipeline-a-sequential.yml,30856370156,5,1,workflow_dispatch,main,completed,success,2026-08-03T21:51:36Z,2026-08-03T21:51:36Z,2026-08-03T21:52:07Z,31.0,1
+A,pipeline-a-sequential.yml,30856366596,4,1,workflow_dispatch,main,completed,success,2026-08-03T21:51:32Z,2026-08-03T21:51:32Z,2026-08-03T21:52:10Z,38.0,1
+A,pipeline-a-sequential.yml,30856362896,3,1,workflow_dispatch,main,completed,success,2026-08-03T21:51:29Z,2026-08-03T21:51:29Z,2026-08-03T21:52:01Z,32.0,1
+A,pipeline-a-sequential.yml,30856359335,2,1,workflow_dispatch,main,completed,success,2026-08-03T21:51:25Z,2026-08-03T21:51:25Z,2026-08-03T21:52:25Z,60.0,1
+A,pipeline-a-sequential.yml,30854948749,1,1,workflow_dispatch,main,completed,success,2026-08-03T21:30:54Z,2026-08-03T21:30:54Z,2026-08-03T21:32:02Z,68.0,1

@@ -1,0 +1,11 @@
+strategy,workflow_file,run_id,run_number,run_attempt,event,head_branch,status,conclusion,created_at,run_started_at,updated_at,duration_total_s,billable_minutes_linux
+B,pipeline-b-parallel-cache.yml,30856424961,10,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:22Z,2026-08-03T21:52:22Z,2026-08-03T21:55:54Z,212.0,5
+B,pipeline-b-parallel-cache.yml,30856420988,9,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:19Z,2026-08-03T21:52:19Z,2026-08-03T21:55:45Z,206.0,5
+B,pipeline-b-parallel-cache.yml,30856417145,8,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:16Z,2026-08-03T21:52:16Z,2026-08-03T21:55:35Z,199.0,5
+B,pipeline-b-parallel-cache.yml,30856412968,7,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:12Z,2026-08-03T21:52:12Z,2026-08-03T21:55:18Z,186.0,5
+B,pipeline-b-parallel-cache.yml,30856409135,6,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:09Z,2026-08-03T21:52:09Z,2026-08-03T21:55:06Z,177.0,5
+B,pipeline-b-parallel-cache.yml,30856404920,5,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:06Z,2026-08-03T21:52:06Z,2026-08-03T21:55:11Z,185.0,5
+B,pipeline-b-parallel-cache.yml,30856400590,4,1,workflow_dispatch,main,completed,success,2026-08-03T21:52:02Z,2026-08-03T21:52:02Z,2026-08-03T21:55:12Z,190.0,5
+B,pipeline-b-parallel-cache.yml,30856396243,3,1,workflow_dispatch,main,completed,success,2026-08-03T21:51:59Z,2026-08-03T21:51:59Z,2026-08-03T21:55:14Z,195.0,5
+B,pipeline-b-parallel-cache.yml,30856392449,2,1,workflow_dispatch,main,completed,success,2026-08-03T21:51:55Z,2026-08-03T21:51:55Z,2026-08-03T21:54:53Z,178.0,5
+B,pipeline-b-parallel-cache.yml,30855088224,1,1,workflow_dispatch,main,completed,success,2026-08-03T21:32:54Z,2026-08-03T21:32:54Z,2026-08-03T21:33:41Z,47.0,5
