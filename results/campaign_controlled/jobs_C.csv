@@ -1,0 +1,51 @@
+strategy,workflow_file,run_id,job_id,job_name,status,conclusion,started_at,completed_at,duration_s
+C,pipeline-c-conditional.yml,30859359325,91837707712,SBOM (Syft),completed,success,2026-08-03T22:37:36Z,2026-08-03T22:37:42Z,6.0
+C,pipeline-c-conditional.yml,30859359325,91837707797,Vulnerability scan (Trivy),completed,success,2026-08-03T22:37:36Z,2026-08-03T22:37:45Z,9.0
+C,pipeline-c-conditional.yml,30859359325,91837707828,Tests + coverage,completed,success,2026-08-03T22:37:36Z,2026-08-03T22:37:48Z,12.0
+C,pipeline-c-conditional.yml,30859359325,91837707835,Lint (Ruff),completed,success,2026-08-03T22:37:43Z,2026-08-03T22:37:52Z,9.0
+C,pipeline-c-conditional.yml,30859359325,91837751239,SonarCloud analysis,completed,success,2026-08-03T22:37:50Z,2026-08-03T22:38:12Z,22.0
+C,pipeline-c-conditional.yml,30859297629,91837511536,Lint (Ruff),completed,success,2026-08-03T22:36:37Z,2026-08-03T22:36:51Z,14.0
+C,pipeline-c-conditional.yml,30859297629,91837511553,Tests + coverage,completed,success,2026-08-03T22:36:42Z,2026-08-03T22:36:53Z,11.0
+C,pipeline-c-conditional.yml,30859297629,91837511559,Vulnerability scan (Trivy),completed,success,2026-08-03T22:36:36Z,2026-08-03T22:36:49Z,13.0
+C,pipeline-c-conditional.yml,30859297629,91837511591,SBOM (Syft),completed,success,2026-08-03T22:36:37Z,2026-08-03T22:36:46Z,9.0
+C,pipeline-c-conditional.yml,30859297629,91837572950,SonarCloud analysis,completed,success,2026-08-03T22:36:56Z,2026-08-03T22:37:22Z,26.0
+C,pipeline-c-conditional.yml,30859232540,91837301048,SBOM (Syft),completed,success,2026-08-03T22:35:42Z,2026-08-03T22:35:51Z,9.0
+C,pipeline-c-conditional.yml,30859232540,91837301051,Vulnerability scan (Trivy),completed,success,2026-08-03T22:35:41Z,2026-08-03T22:35:57Z,16.0
+C,pipeline-c-conditional.yml,30859232540,91837301084,Lint (Ruff),completed,success,2026-08-03T22:35:40Z,2026-08-03T22:35:50Z,10.0
+C,pipeline-c-conditional.yml,30859232540,91837301093,Tests + coverage,completed,success,2026-08-03T22:35:34Z,2026-08-03T22:35:48Z,14.0
+C,pipeline-c-conditional.yml,30859232540,91837352052,SonarCloud analysis,completed,success,2026-08-03T22:35:50Z,2026-08-03T22:36:14Z,24.0
+C,pipeline-c-conditional.yml,30859179918,91837150546,Vulnerability scan (Trivy),completed,success,2026-08-03T22:34:49Z,2026-08-03T22:34:57Z,8.0
+C,pipeline-c-conditional.yml,30859179918,91837150557,Lint (Ruff),completed,success,2026-08-03T22:34:49Z,2026-08-03T22:35:00Z,11.0
+C,pipeline-c-conditional.yml,30859179918,91837150572,SBOM (Syft),completed,success,2026-08-03T22:34:54Z,2026-08-03T22:35:02Z,8.0
+C,pipeline-c-conditional.yml,30859179918,91837150582,Tests + coverage,completed,success,2026-08-03T22:34:53Z,2026-08-03T22:35:06Z,13.0
+C,pipeline-c-conditional.yml,30859179918,91837213526,SonarCloud analysis,completed,success,2026-08-03T22:35:08Z,2026-08-03T22:35:27Z,19.0
+C,pipeline-c-conditional.yml,30859131741,91837001885,Lint (Ruff),completed,success,2026-08-03T22:34:10Z,2026-08-03T22:34:19Z,9.0
+C,pipeline-c-conditional.yml,30859131741,91837001940,Tests + coverage,completed,success,2026-08-03T22:34:04Z,2026-08-03T22:34:15Z,11.0
+C,pipeline-c-conditional.yml,30859131741,91837001960,SBOM (Syft),completed,success,2026-08-03T22:34:12Z,2026-08-03T22:34:23Z,11.0
+C,pipeline-c-conditional.yml,30859131741,91837001990,Vulnerability scan (Trivy),completed,success,2026-08-03T22:34:04Z,2026-08-03T22:34:16Z,12.0
+C,pipeline-c-conditional.yml,30859131741,91837046001,SonarCloud analysis,completed,success,2026-08-03T22:34:17Z,2026-08-03T22:34:36Z,19.0
+C,pipeline-c-conditional.yml,30859067994,91836801279,Lint (Ruff),completed,success,2026-08-03T22:33:09Z,2026-08-03T22:33:24Z,15.0
+C,pipeline-c-conditional.yml,30859067994,91836801343,Vulnerability scan (Trivy),completed,success,2026-08-03T22:33:07Z,2026-08-03T22:33:18Z,11.0
+C,pipeline-c-conditional.yml,30859067994,91836801384,SBOM (Syft),completed,success,2026-08-03T22:33:09Z,2026-08-03T22:33:20Z,11.0
+C,pipeline-c-conditional.yml,30859067994,91836801387,Tests + coverage,completed,success,2026-08-03T22:33:04Z,2026-08-03T22:33:22Z,18.0
+C,pipeline-c-conditional.yml,30859067994,91836871645,SonarCloud analysis,completed,success,2026-08-03T22:33:31Z,2026-08-03T22:33:51Z,20.0
+C,pipeline-c-conditional.yml,30859020016,91836647891,Tests + coverage,completed,success,2026-08-03T22:32:18Z,2026-08-03T22:32:32Z,14.0
+C,pipeline-c-conditional.yml,30859020016,91836647902,Lint (Ruff),completed,success,2026-08-03T22:32:17Z,2026-08-03T22:32:27Z,10.0
+C,pipeline-c-conditional.yml,30859020016,91836647904,SBOM (Syft),completed,success,2026-08-03T22:32:33Z,2026-08-03T22:32:43Z,10.0
+C,pipeline-c-conditional.yml,30859020016,91836647954,Vulnerability scan (Trivy),completed,success,2026-08-03T22:32:18Z,2026-08-03T22:32:31Z,13.0
+C,pipeline-c-conditional.yml,30859020016,91836703436,SonarCloud analysis,completed,success,2026-08-03T22:32:34Z,2026-08-03T22:32:58Z,24.0
+C,pipeline-c-conditional.yml,30858955424,91836446026,Tests + coverage,completed,success,2026-08-03T22:31:23Z,2026-08-03T22:31:39Z,16.0
+C,pipeline-c-conditional.yml,30858955424,91836446028,Vulnerability scan (Trivy),completed,success,2026-08-03T22:31:23Z,2026-08-03T22:31:33Z,10.0
+C,pipeline-c-conditional.yml,30858955424,91836446029,SBOM (Syft),completed,success,2026-08-03T22:31:17Z,2026-08-03T22:31:26Z,9.0
+C,pipeline-c-conditional.yml,30858955424,91836446038,Lint (Ruff),completed,success,2026-08-03T22:31:18Z,2026-08-03T22:31:32Z,14.0
+C,pipeline-c-conditional.yml,30858955424,91836526975,SonarCloud analysis,completed,success,2026-08-03T22:31:42Z,2026-08-03T22:32:02Z,20.0
+C,pipeline-c-conditional.yml,30858907213,91836296074,SBOM (Syft),completed,success,2026-08-03T22:30:32Z,2026-08-03T22:30:41Z,9.0
+C,pipeline-c-conditional.yml,30858907213,91836296104,Vulnerability scan (Trivy),completed,success,2026-08-03T22:30:31Z,2026-08-03T22:30:44Z,13.0
+C,pipeline-c-conditional.yml,30858907213,91836296112,Lint (Ruff),completed,success,2026-08-03T22:30:32Z,2026-08-03T22:30:40Z,8.0
+C,pipeline-c-conditional.yml,30858907213,91836296133,Tests + coverage,completed,success,2026-08-03T22:30:38Z,2026-08-03T22:30:50Z,12.0
+C,pipeline-c-conditional.yml,30858907213,91836366924,SonarCloud analysis,completed,success,2026-08-03T22:30:52Z,2026-08-03T22:31:09Z,17.0
+C,pipeline-c-conditional.yml,30858854433,91836138352,Tests + coverage,completed,success,2026-08-03T22:29:47Z,2026-08-03T22:29:59Z,12.0
+C,pipeline-c-conditional.yml,30858854433,91836138357,Vulnerability scan (Trivy),completed,success,2026-08-03T22:29:47Z,2026-08-03T22:29:57Z,10.0
+C,pipeline-c-conditional.yml,30858854433,91836138376,SBOM (Syft),completed,success,2026-08-03T22:29:53Z,2026-08-03T22:29:59Z,6.0
+C,pipeline-c-conditional.yml,30858854433,91836138448,Lint (Ruff),completed,success,2026-08-03T22:29:47Z,2026-08-03T22:29:56Z,9.0
+C,pipeline-c-conditional.yml,30858854433,91836185924,SonarCloud analysis,completed,success,2026-08-03T22:30:02Z,2026-08-03T22:30:24Z,22.0

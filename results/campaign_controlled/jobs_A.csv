@@ -1,0 +1,11 @@
+strategy,workflow_file,run_id,job_id,job_name,status,conclusion,started_at,completed_at,duration_s
+A,pipeline-a-sequential.yml,30858229802,91834132648,Sequential DevSecOps pipeline,completed,success,2026-08-03T22:20:04Z,2026-08-03T22:20:45Z,41.0
+A,pipeline-a-sequential.yml,30858182782,91833979411,Sequential DevSecOps pipeline,completed,success,2026-08-03T22:19:09Z,2026-08-03T22:19:42Z,33.0
+A,pipeline-a-sequential.yml,30858120392,91833781412,Sequential DevSecOps pipeline,completed,success,2026-08-03T22:18:09Z,2026-08-03T22:18:52Z,43.0
+A,pipeline-a-sequential.yml,30858074506,91833633431,Sequential DevSecOps pipeline,completed,success,2026-08-03T22:17:23Z,2026-08-03T22:17:55Z,32.0
+A,pipeline-a-sequential.yml,30858010866,91833431876,Sequential DevSecOps pipeline,completed,success,2026-08-03T22:16:28Z,2026-08-03T22:17:11Z,43.0
+A,pipeline-a-sequential.yml,30857946200,91833229490,Sequential DevSecOps pipeline,completed,success,2026-08-03T22:15:21Z,2026-08-03T22:16:05Z,44.0
+A,pipeline-a-sequential.yml,30857878853,91833022221,Sequential DevSecOps pipeline,completed,success,2026-08-03T22:14:23Z,2026-08-03T22:15:08Z,45.0
+A,pipeline-a-sequential.yml,30857811259,91832812954,Sequential DevSecOps pipeline,completed,success,2026-08-03T22:13:23Z,2026-08-03T22:14:02Z,39.0
+A,pipeline-a-sequential.yml,30857746853,91832607992,Sequential DevSecOps pipeline,completed,success,2026-08-03T22:12:17Z,2026-08-03T22:13:05Z,48.0
+A,pipeline-a-sequential.yml,30857682979,91832407972,Sequential DevSecOps pipeline,completed,success,2026-08-03T22:11:17Z,2026-08-03T22:11:57Z,40.0
