@@ -54,3 +54,21 @@ l'analyse qualité).
 ```bash
 ruff check .
 ```
+
+## CI/CD
+
+Le workflow `.github/workflows/pipeline-a-sequential.yml` (**Pipeline A**, stratégie
+séquentielle) sert de baseline de référence. Il s'exécute **manuellement**
+(`workflow_dispatch`) et enchaîne, dans un seul job : tests + couverture, Ruff,
+SonarCloud, SBOM (Syft), scan de vulnérabilités (Trivy), puis archivage des rapports
+(`coverage.xml`, `sbom.cyclonedx.json`, `trivy-fs.json`).
+
+### À configurer sur GitHub
+
+| Type | Nom | Rôle |
+|------|-----|------|
+| Secret | `SONAR_TOKEN` | Jeton d'analyse SonarCloud. **Seule valeur sensible.** Tant qu'il est absent, l'étape SonarCloud est automatiquement sautée (le reste du pipeline tourne normalement). |
+
+Les valeurs non sensibles (`sonar.projectKey`, `sonar.organization`, chemin de
+couverture) sont versionnées dans `sonar-project.properties` — à ajuster aux valeurs
+réelles de ton organisation / projet sur [sonarcloud.io](https://sonarcloud.io).
