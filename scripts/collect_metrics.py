@@ -86,7 +86,10 @@ def _duration_s(start: str | None, end: str | None) -> float | None:
 
 def fetch_runs(repo: str, workflow: str, limit: int, event: str | None,
                branch: str | None, token: str | None) -> list[dict]:
-    """Récupère les N derniers runs d'un workflow."""
+    """Récupère les N derniers runs d'un workflow (une seule page d'API)."""
+    if limit > 100:
+        print("Attention : l'API renvoie au maximum 100 runs par page ; "
+              f"la collecte est limitée à 100 au lieu de {limit}.", file=sys.stderr)
     params = {"per_page": str(min(limit, 100))}
     if event:
         params["event"] = event

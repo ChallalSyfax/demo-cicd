@@ -67,7 +67,12 @@ SonarCloud, SBOM (Syft), scan de vulnérabilités (Trivy), puis archivage des ra
 
 | Type | Nom | Rôle |
 |------|-----|------|
-| Secret | `SONAR_TOKEN` | Jeton d'analyse SonarCloud. **Seule valeur sensible.** Tant qu'il est absent, l'étape SonarCloud est automatiquement sautée (le reste du pipeline tourne normalement). |
+| Secret | `SONAR_TOKEN` | Jeton d'analyse SonarCloud. **Seule valeur sensible.** Tant qu'il est absent, l'étape SonarCloud est automatiquement sautée (le reste du pipeline tourne normalement) ; dès qu'il est défini, elle s'active sans modifier les workflows. |
+
+> Détail d'implémentation : `SONAR_TOKEN` est déclaré au niveau du **job**, et non de
+> l'étape. Le bloc `env:` d'une étape n'est pas visible depuis le `if:` de cette même
+> étape — le placer au niveau du job est ce qui rend la condition `if: env.SONAR_TOKEN != ''`
+> réellement fonctionnelle.
 
 Les valeurs non sensibles (`sonar.projectKey`, `sonar.organization`, chemin de
 couverture) sont versionnées dans `sonar-project.properties` — à ajuster aux valeurs

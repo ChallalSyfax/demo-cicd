@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import sys
 
 SEVERITIES = ["CRITICAL", "HIGH", "MEDIUM", "LOW", "UNKNOWN"]
@@ -42,8 +43,12 @@ def count_severities(path: str) -> dict[str, int]:
 
 
 def _guess_strategy(path: str) -> str:
-    """Devine la stratégie (A/B/C) d'après le nom de fichier, sinon '?'."""
-    name = path.lower()
+    """Devine la stratégie (A/B/C) d'après le nom du fichier, sinon '?'.
+
+    Seul le nom de base est examiné : un répertoire parent contenant « -b »
+    ou « _c » ne doit pas influencer la détection.
+    """
+    name = os.path.basename(path).lower()
     for letter in ("a", "b", "c"):
         if f"_{letter}" in name or f"-{letter}" in name:
             return letter.upper()
