@@ -1,0 +1,51 @@
+strategy,workflow_file,run_id,job_id,job_name,status,conclusion,started_at,completed_at,duration_s
+B,pipeline-b-parallel-cache.yml,30856424961,91828403658,Vulnerability scan (Trivy),completed,success,2026-08-03T21:54:27Z,2026-08-03T21:54:38Z,11.0
+B,pipeline-b-parallel-cache.yml,30856424961,91828403688,Tests + coverage,completed,success,2026-08-03T21:54:27Z,2026-08-03T21:54:45Z,18.0
+B,pipeline-b-parallel-cache.yml,30856424961,91828403718,SBOM (Syft),completed,success,2026-08-03T21:54:33Z,2026-08-03T21:54:41Z,8.0
+B,pipeline-b-parallel-cache.yml,30856424961,91828403734,Lint (Ruff),completed,success,2026-08-03T21:54:29Z,2026-08-03T21:54:40Z,11.0
+B,pipeline-b-parallel-cache.yml,30856424961,91828908794,SonarCloud analysis,completed,success,2026-08-03T21:55:33Z,2026-08-03T21:55:53Z,20.0
+B,pipeline-b-parallel-cache.yml,30856420988,91828393940,Vulnerability scan (Trivy),completed,success,2026-08-03T21:54:27Z,2026-08-03T21:54:43Z,16.0
+B,pipeline-b-parallel-cache.yml,30856420988,91828393946,Lint (Ruff),completed,success,2026-08-03T21:54:09Z,2026-08-03T21:54:18Z,9.0
+B,pipeline-b-parallel-cache.yml,30856420988,91828393967,Tests + coverage,completed,success,2026-08-03T21:54:16Z,2026-08-03T21:54:26Z,10.0
+B,pipeline-b-parallel-cache.yml,30856420988,91828393976,SBOM (Syft),completed,success,2026-08-03T21:54:16Z,2026-08-03T21:54:25Z,9.0
+B,pipeline-b-parallel-cache.yml,30856420988,91828843704,SonarCloud analysis,completed,success,2026-08-03T21:55:23Z,2026-08-03T21:55:44Z,21.0
+B,pipeline-b-parallel-cache.yml,30856417145,91828382655,Lint (Ruff),completed,success,2026-08-03T21:53:54Z,2026-08-03T21:54:04Z,10.0
+B,pipeline-b-parallel-cache.yml,30856417145,91828382667,SBOM (Syft),completed,success,2026-08-03T21:54:00Z,2026-08-03T21:54:08Z,8.0
+B,pipeline-b-parallel-cache.yml,30856417145,91828382715,Tests + coverage,completed,success,2026-08-03T21:54:07Z,2026-08-03T21:54:25Z,18.0
+B,pipeline-b-parallel-cache.yml,30856417145,91828382845,Vulnerability scan (Trivy),completed,success,2026-08-03T21:54:14Z,2026-08-03T21:54:30Z,16.0
+B,pipeline-b-parallel-cache.yml,30856417145,91828836681,SonarCloud analysis,completed,success,2026-08-03T21:55:13Z,2026-08-03T21:55:34Z,21.0
+B,pipeline-b-parallel-cache.yml,30856412968,91828367974,Tests + coverage,completed,success,2026-08-03T21:53:33Z,2026-08-03T21:53:48Z,15.0
+B,pipeline-b-parallel-cache.yml,30856412968,91828367994,Vulnerability scan (Trivy),completed,success,2026-08-03T21:53:40Z,2026-08-03T21:53:52Z,12.0
+B,pipeline-b-parallel-cache.yml,30856412968,91828368026,Lint (Ruff),completed,success,2026-08-03T21:53:50Z,2026-08-03T21:53:58Z,8.0
+B,pipeline-b-parallel-cache.yml,30856412968,91828368046,SBOM (Syft),completed,success,2026-08-03T21:53:43Z,2026-08-03T21:53:51Z,8.0
+B,pipeline-b-parallel-cache.yml,30856412968,91828705787,SonarCloud analysis,completed,success,2026-08-03T21:55:00Z,2026-08-03T21:55:17Z,17.0
+B,pipeline-b-parallel-cache.yml,30856409135,91828354872,Tests + coverage,completed,success,2026-08-03T21:53:26Z,2026-08-03T21:53:40Z,14.0
+B,pipeline-b-parallel-cache.yml,30856409135,91828354886,Lint (Ruff),completed,success,2026-08-03T21:53:31Z,2026-08-03T21:53:41Z,10.0
+B,pipeline-b-parallel-cache.yml,30856409135,91828354910,SBOM (Syft),completed,success,2026-08-03T21:53:22Z,2026-08-03T21:53:31Z,9.0
+B,pipeline-b-parallel-cache.yml,30856409135,91828354969,Vulnerability scan (Trivy),completed,success,2026-08-03T21:53:31Z,2026-08-03T21:53:47Z,16.0
+B,pipeline-b-parallel-cache.yml,30856409135,91828675882,SonarCloud analysis,completed,success,2026-08-03T21:54:46Z,2026-08-03T21:55:05Z,19.0
+B,pipeline-b-parallel-cache.yml,30856404920,91828342975,Tests + coverage,completed,success,2026-08-03T21:53:04Z,2026-08-03T21:53:16Z,12.0
+B,pipeline-b-parallel-cache.yml,30856404920,91828343027,Lint (Ruff),completed,success,2026-08-03T21:53:09Z,2026-08-03T21:53:19Z,10.0
+B,pipeline-b-parallel-cache.yml,30856404920,91828343055,Vulnerability scan (Trivy),completed,success,2026-08-03T21:53:13Z,2026-08-03T21:53:28Z,15.0
+B,pipeline-b-parallel-cache.yml,30856404920,91828343063,SBOM (Syft),completed,success,2026-08-03T21:53:18Z,2026-08-03T21:53:24Z,6.0
+B,pipeline-b-parallel-cache.yml,30856404920,91828592623,SonarCloud analysis,completed,success,2026-08-03T21:54:52Z,2026-08-03T21:55:11Z,19.0
+B,pipeline-b-parallel-cache.yml,30856400590,91828330081,SBOM (Syft),completed,success,2026-08-03T21:52:44Z,2026-08-03T21:52:53Z,9.0
+B,pipeline-b-parallel-cache.yml,30856400590,91828330082,Lint (Ruff),completed,success,2026-08-03T21:52:57Z,2026-08-03T21:53:07Z,10.0
+B,pipeline-b-parallel-cache.yml,30856400590,91828330083,Vulnerability scan (Trivy),completed,success,2026-08-03T21:52:54Z,2026-08-03T21:53:04Z,10.0
+B,pipeline-b-parallel-cache.yml,30856400590,91828330099,Tests + coverage,completed,success,2026-08-03T21:52:45Z,2026-08-03T21:52:55Z,10.0
+B,pipeline-b-parallel-cache.yml,30856400590,91828518515,SonarCloud analysis,completed,success,2026-08-03T21:54:48Z,2026-08-03T21:55:11Z,23.0
+B,pipeline-b-parallel-cache.yml,30856396243,91828317998,Lint (Ruff),completed,success,2026-08-03T21:52:29Z,2026-08-03T21:52:43Z,14.0
+B,pipeline-b-parallel-cache.yml,30856396243,91828318026,Vulnerability scan (Trivy),completed,success,2026-08-03T21:52:46Z,2026-08-03T21:53:02Z,16.0
+B,pipeline-b-parallel-cache.yml,30856396243,91828318051,Tests + coverage,completed,success,2026-08-03T21:52:35Z,2026-08-03T21:52:48Z,13.0
+B,pipeline-b-parallel-cache.yml,30856396243,91828318062,SBOM (Syft),completed,success,2026-08-03T21:52:43Z,2026-08-03T21:52:52Z,9.0
+B,pipeline-b-parallel-cache.yml,30856396243,91828493310,SonarCloud analysis,completed,success,2026-08-03T21:54:48Z,2026-08-03T21:55:13Z,25.0
+B,pipeline-b-parallel-cache.yml,30856392449,91828305776,SBOM (Syft),completed,success,2026-08-03T21:52:18Z,2026-08-03T21:52:25Z,7.0
+B,pipeline-b-parallel-cache.yml,30856392449,91828305806,Lint (Ruff),completed,success,2026-08-03T21:52:07Z,2026-08-03T21:52:17Z,10.0
+B,pipeline-b-parallel-cache.yml,30856392449,91828305830,Vulnerability scan (Trivy),completed,success,2026-08-03T21:52:33Z,2026-08-03T21:52:42Z,9.0
+B,pipeline-b-parallel-cache.yml,30856392449,91828305859,Tests + coverage,completed,success,2026-08-03T21:52:26Z,2026-08-03T21:52:36Z,10.0
+B,pipeline-b-parallel-cache.yml,30856392449,91828450961,SonarCloud analysis,completed,success,2026-08-03T21:54:31Z,2026-08-03T21:54:53Z,22.0
+B,pipeline-b-parallel-cache.yml,30855088224,91824118236,Tests + coverage,completed,success,2026-08-03T21:33:04Z,2026-08-03T21:33:20Z,16.0
+B,pipeline-b-parallel-cache.yml,30855088224,91824118294,Vulnerability scan (Trivy),completed,success,2026-08-03T21:32:57Z,2026-08-03T21:33:12Z,15.0
+B,pipeline-b-parallel-cache.yml,30855088224,91824118313,Lint (Ruff),completed,success,2026-08-03T21:32:57Z,2026-08-03T21:33:09Z,12.0
+B,pipeline-b-parallel-cache.yml,30855088224,91824118315,SBOM (Syft),completed,success,2026-08-03T21:32:57Z,2026-08-03T21:33:09Z,12.0
+B,pipeline-b-parallel-cache.yml,30855088224,91824211717,SonarCloud analysis,completed,success,2026-08-03T21:33:22Z,2026-08-03T21:33:41Z,19.0
