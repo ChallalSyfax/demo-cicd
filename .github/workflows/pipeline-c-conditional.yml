@@ -83,6 +83,12 @@ jobs:
     name: SonarCloud analysis
     runs-on: ubuntu-latest
     needs: test
+
+    # Défini au niveau du job : le bloc env: d'une étape n'est pas visible
+    # depuis le if: de cette même étape.
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -98,8 +104,6 @@ jobs:
       - name: SonarCloud analysis
         if: env.SONAR_TOKEN != ''
         uses: SonarSource/sonarcloud-github-action@v3.1.0
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   # --- Contrôles lourds : uniquement sur push main ou lancement manuel ---------
 
