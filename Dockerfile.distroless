@@ -1,0 +1,22 @@
+# syntax=docker/dockerfile:1
+# Image durcie "distroless" : ni shell, ni gestionnaire de paquets, ni utilitaires.
+# Même base Debian 12 et même Python 3.11 que l'image slim : seule la surface du
+# système change, ce qui isole l'effet du durcissement (Exp.3).
+
+# --- Étage build : dépendances installées dans un dossier autonome --------------
+FROM python:3.11-slim-bookworm AS builder
+WORKDIR /build
+COPY requirements.txt .
+RUN pip install --no-cache-dir --target=/deps -r requirements.txt
+
+# --- Étage runtime : distroless, non-root --------------------------------------
+FROM gcr.io/distroless/python3-debian12:nonroot AS runtime
+ENV PYTHONPATH=/deps \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+WORKDIR /app
+COPY --from=builder /deps /deps
+COPY app/ ./app/
+EXPOSE 8000
+# L'ENTRYPOINT de l'image distroless est "python3" : on lui passe les arguments.
+CMD ["-m", "uvicorn", "app.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000"]

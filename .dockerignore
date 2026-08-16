@@ -1,0 +1,19 @@
+# Contexte de build minimal : seuls requirements.txt et app/ sont copiés.
+.git
+.github
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+tests
+results
+scripts
+*.md
+coverage.xml
+.coverage
+sbom.*.json
+trivy-*.json
+Dockerfile*
+.dockerignore
+requirements-dev.txt

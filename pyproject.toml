@@ -2,7 +2,7 @@
 name = "demo-cicd"
 version = "0.2.0"
 description = "API FastAPI de crédit-bail servant de support à la comparaison de pipelines CI/CD DevSecOps."
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
@@ -17,8 +17,9 @@ branch = true
 show_missing = true
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py311"
 line-length = 100
+# Cible py311 : version des images conteneur (Debian 12 / distroless).
 
 [tool.ruff.lint]
 # E/F : pycodestyle + pyflakes ; I : import sorting ; UP : pyupgrade ; B : bugbear.
