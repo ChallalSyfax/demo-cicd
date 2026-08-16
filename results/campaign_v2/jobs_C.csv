@@ -1,0 +1,78 @@
+strategy,workflow_file,run_id,job_id,job_name,status,conclusion,started_at,completed_at,duration_s
+C,pipeline-c-conditional.yml,31963731574,95205557323,Tests + coverage,completed,success,2026-08-16T18:09:07Z,2026-08-16T18:10:08Z,61.0
+C,pipeline-c-conditional.yml,31963731574,95205557340,Lint (Ruff),completed,success,2026-08-16T18:09:08Z,2026-08-16T18:09:18Z,10.0
+C,pipeline-c-conditional.yml,31963731574,95205557355,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:09:07Z,2026-08-16T18:09:20Z,13.0
+C,pipeline-c-conditional.yml,31963731574,95205557364,Secret scan (Trivy),completed,success,2026-08-16T18:09:07Z,2026-08-16T18:09:22Z,15.0
+C,pipeline-c-conditional.yml,31963731574,95205557365,SBOM (Syft),completed,success,2026-08-16T18:09:07Z,2026-08-16T18:09:15Z,8.0
+C,pipeline-c-conditional.yml,31963731574,95205557393,SAST (Bandit),completed,success,2026-08-16T18:09:07Z,2026-08-16T18:09:16Z,9.0
+C,pipeline-c-conditional.yml,31963731574,95205688673,SonarCloud quality gate,completed,skipped,2026-08-16T18:10:09Z,2026-08-16T18:10:08Z,-1.0
+C,pipeline-c-conditional.yml,31963680364,95205424792,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:08:03Z,2026-08-16T18:08:18Z,15.0
+C,pipeline-c-conditional.yml,31963680364,95205424808,Lint (Ruff),completed,success,2026-08-16T18:08:03Z,2026-08-16T18:08:16Z,13.0
+C,pipeline-c-conditional.yml,31963680364,95205424815,SBOM (Syft),completed,success,2026-08-16T18:08:03Z,2026-08-16T18:08:13Z,10.0
+C,pipeline-c-conditional.yml,31963680364,95205424819,SAST (Bandit),completed,success,2026-08-16T18:08:03Z,2026-08-16T18:08:15Z,12.0
+C,pipeline-c-conditional.yml,31963680364,95205424850,Secret scan (Trivy),completed,success,2026-08-16T18:08:03Z,2026-08-16T18:08:11Z,8.0
+C,pipeline-c-conditional.yml,31963680364,95205424870,Tests + coverage,completed,success,2026-08-16T18:08:03Z,2026-08-16T18:09:09Z,66.0
+C,pipeline-c-conditional.yml,31963680364,95205567910,SonarCloud quality gate,completed,skipped,2026-08-16T18:09:10Z,2026-08-16T18:09:10Z,0.0
+C,pipeline-c-conditional.yml,31963607874,95205239417,Lint (Ruff),completed,success,2026-08-16T18:06:35Z,2026-08-16T18:06:41Z,6.0
+C,pipeline-c-conditional.yml,31963607874,95205239451,SBOM (Syft),completed,success,2026-08-16T18:06:35Z,2026-08-16T18:06:46Z,11.0
+C,pipeline-c-conditional.yml,31963607874,95205239459,Tests + coverage,completed,success,2026-08-16T18:06:36Z,2026-08-16T18:07:44Z,68.0
+C,pipeline-c-conditional.yml,31963607874,95205239462,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:06:35Z,2026-08-16T18:06:45Z,10.0
+C,pipeline-c-conditional.yml,31963607874,95205239539,Secret scan (Trivy),completed,success,2026-08-16T18:06:36Z,2026-08-16T18:06:52Z,16.0
+C,pipeline-c-conditional.yml,31963607874,95205239606,SAST (Bandit),completed,success,2026-08-16T18:06:35Z,2026-08-16T18:06:42Z,7.0
+C,pipeline-c-conditional.yml,31963607874,95205390316,SonarCloud quality gate,completed,skipped,2026-08-16T18:07:45Z,2026-08-16T18:07:44Z,-1.0
+C,pipeline-c-conditional.yml,31963507312,95204980645,SAST (Bandit),completed,success,2026-08-16T18:04:35Z,2026-08-16T18:04:55Z,20.0
+C,pipeline-c-conditional.yml,31963507312,95204980683,Secret scan (Trivy),completed,success,2026-08-16T18:04:35Z,2026-08-16T18:04:49Z,14.0
+C,pipeline-c-conditional.yml,31963507312,95204980686,SBOM (Syft),completed,success,2026-08-16T18:04:35Z,2026-08-16T18:04:44Z,9.0
+C,pipeline-c-conditional.yml,31963507312,95204980689,Lint (Ruff),completed,success,2026-08-16T18:04:35Z,2026-08-16T18:04:44Z,9.0
+C,pipeline-c-conditional.yml,31963507312,95204980690,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:04:35Z,2026-08-16T18:04:44Z,9.0
+C,pipeline-c-conditional.yml,31963507312,95204980723,Tests + coverage,completed,success,2026-08-16T18:04:35Z,2026-08-16T18:05:42Z,67.0
+C,pipeline-c-conditional.yml,31963507312,95205130243,SonarCloud quality gate,completed,skipped,2026-08-16T18:05:43Z,2026-08-16T18:05:42Z,-1.0
+C,pipeline-c-conditional.yml,31963424314,95204763009,Tests + coverage,completed,success,2026-08-16T18:02:55Z,2026-08-16T18:03:59Z,64.0
+C,pipeline-c-conditional.yml,31963424314,95204763010,Lint (Ruff),completed,success,2026-08-16T18:02:55Z,2026-08-16T18:03:01Z,6.0
+C,pipeline-c-conditional.yml,31963424314,95204763023,Secret scan (Trivy),completed,success,2026-08-16T18:02:55Z,2026-08-16T18:03:05Z,10.0
+C,pipeline-c-conditional.yml,31963424314,95204763034,SAST (Bandit),completed,success,2026-08-16T18:02:55Z,2026-08-16T18:03:02Z,7.0
+C,pipeline-c-conditional.yml,31963424314,95204763061,SBOM (Syft),completed,success,2026-08-16T18:02:56Z,2026-08-16T18:03:06Z,10.0
+C,pipeline-c-conditional.yml,31963424314,95204763088,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:02:55Z,2026-08-16T18:03:10Z,15.0
+C,pipeline-c-conditional.yml,31963424314,95204903733,SonarCloud quality gate,completed,skipped,2026-08-16T18:04:00Z,2026-08-16T18:03:59Z,-1.0
+C,pipeline-c-conditional.yml,31963334334,95204540283,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:01:09Z,2026-08-16T18:01:24Z,15.0
+C,pipeline-c-conditional.yml,31963334334,95204540299,Lint (Ruff),completed,success,2026-08-16T18:01:09Z,2026-08-16T18:01:18Z,9.0
+C,pipeline-c-conditional.yml,31963334334,95204540329,Secret scan (Trivy),completed,success,2026-08-16T18:01:09Z,2026-08-16T18:01:18Z,9.0
+C,pipeline-c-conditional.yml,31963334334,95204540344,Tests + coverage,completed,success,2026-08-16T18:01:08Z,2026-08-16T18:02:08Z,60.0
+C,pipeline-c-conditional.yml,31963334334,95204540355,SAST (Bandit),completed,success,2026-08-16T18:01:09Z,2026-08-16T18:01:22Z,13.0
+C,pipeline-c-conditional.yml,31963334334,95204540364,SBOM (Syft),completed,success,2026-08-16T18:01:09Z,2026-08-16T18:01:15Z,6.0
+C,pipeline-c-conditional.yml,31963334334,95204666892,SonarCloud quality gate,completed,skipped,2026-08-16T18:02:09Z,2026-08-16T18:02:09Z,0.0
+C,pipeline-c-conditional.yml,31963281092,95204411093,SAST (Bandit),completed,success,2026-08-16T18:00:12Z,2026-08-16T18:00:23Z,11.0
+C,pipeline-c-conditional.yml,31963281092,95204411107,SBOM (Syft),completed,success,2026-08-16T18:00:12Z,2026-08-16T18:00:23Z,11.0
+C,pipeline-c-conditional.yml,31963281092,95204411160,Lint (Ruff),completed,success,2026-08-16T18:00:14Z,2026-08-16T18:00:24Z,10.0
+C,pipeline-c-conditional.yml,31963281092,95204411177,Secret scan (Trivy),completed,success,2026-08-16T18:00:13Z,2026-08-16T18:00:29Z,16.0
+C,pipeline-c-conditional.yml,31963281092,95204411188,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:00:13Z,2026-08-16T18:00:25Z,12.0
+C,pipeline-c-conditional.yml,31963281092,95204411230,Tests + coverage,completed,success,2026-08-16T18:00:13Z,2026-08-16T18:01:22Z,69.0
+C,pipeline-c-conditional.yml,31963281092,95204572501,SonarCloud quality gate,completed,skipped,2026-08-16T18:01:23Z,2026-08-16T18:01:23Z,0.0
+C,pipeline-c-conditional.yml,31963206355,95204237198,SAST (Bandit),completed,success,2026-08-16T17:58:42Z,2026-08-16T17:58:51Z,9.0
+C,pipeline-c-conditional.yml,31963206355,95204237209,SBOM (Syft),completed,success,2026-08-16T17:58:42Z,2026-08-16T17:58:51Z,9.0
+C,pipeline-c-conditional.yml,31963206355,95204237218,Lint (Ruff),completed,success,2026-08-16T17:58:42Z,2026-08-16T17:58:50Z,8.0
+C,pipeline-c-conditional.yml,31963206355,95204237233,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T17:58:42Z,2026-08-16T17:58:55Z,13.0
+C,pipeline-c-conditional.yml,31963206355,95204237240,Secret scan (Trivy),completed,success,2026-08-16T17:58:42Z,2026-08-16T17:58:55Z,13.0
+C,pipeline-c-conditional.yml,31963206355,95204237244,Tests + coverage,completed,success,2026-08-16T17:58:42Z,2026-08-16T17:59:44Z,62.0
+C,pipeline-c-conditional.yml,31963206355,95204356915,SonarCloud quality gate,completed,skipped,2026-08-16T17:59:44Z,2026-08-16T17:59:44Z,0.0
+C,pipeline-c-conditional.yml,31963115257,95204022255,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T17:56:49Z,2026-08-16T17:57:04Z,15.0
+C,pipeline-c-conditional.yml,31963115257,95204022263,SAST (Bandit),completed,success,2026-08-16T17:56:49Z,2026-08-16T17:56:57Z,8.0
+C,pipeline-c-conditional.yml,31963115257,95204022296,Secret scan (Trivy),completed,success,2026-08-16T17:56:51Z,2026-08-16T17:57:05Z,14.0
+C,pipeline-c-conditional.yml,31963115257,95204022315,Tests + coverage,completed,success,2026-08-16T17:56:50Z,2026-08-16T17:57:47Z,57.0
+C,pipeline-c-conditional.yml,31963115257,95204022318,SBOM (Syft),completed,success,2026-08-16T17:56:49Z,2026-08-16T17:56:57Z,8.0
+C,pipeline-c-conditional.yml,31963115257,95204022368,Lint (Ruff),completed,success,2026-08-16T17:56:50Z,2026-08-16T17:57:02Z,12.0
+C,pipeline-c-conditional.yml,31963115257,95204137134,SonarCloud quality gate,completed,skipped,2026-08-16T17:57:48Z,2026-08-16T17:57:48Z,0.0
+C,pipeline-c-conditional.yml,31963011617,95203781013,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T17:54:45Z,2026-08-16T17:54:55Z,10.0
+C,pipeline-c-conditional.yml,31963011617,95203781018,Tests + coverage,completed,success,2026-08-16T17:54:45Z,2026-08-16T17:55:50Z,65.0
+C,pipeline-c-conditional.yml,31963011617,95203781032,SBOM (Syft),completed,success,2026-08-16T17:54:45Z,2026-08-16T17:54:55Z,10.0
+C,pipeline-c-conditional.yml,31963011617,95203781038,Secret scan (Trivy),completed,success,2026-08-16T17:54:45Z,2026-08-16T17:54:53Z,8.0
+C,pipeline-c-conditional.yml,31963011617,95203781054,Lint (Ruff),completed,success,2026-08-16T17:54:45Z,2026-08-16T17:54:51Z,6.0
+C,pipeline-c-conditional.yml,31963011617,95203781090,SAST (Bandit),completed,success,2026-08-16T17:54:45Z,2026-08-16T17:54:54Z,9.0
+C,pipeline-c-conditional.yml,31963011617,95203912801,SonarCloud quality gate,completed,skipped,2026-08-16T17:55:51Z,2026-08-16T17:55:50Z,-1.0
+C,pipeline-c-conditional.yml,31961896482,95201001523,Secret scan (Trivy),completed,success,2026-08-16T17:32:22Z,2026-08-16T17:32:38Z,16.0
+C,pipeline-c-conditional.yml,31961896482,95201001533,Lint (Ruff),completed,success,2026-08-16T17:32:22Z,2026-08-16T17:32:34Z,12.0
+C,pipeline-c-conditional.yml,31961896482,95201001559,Tests + coverage,completed,success,2026-08-16T17:32:22Z,2026-08-16T17:33:29Z,67.0
+C,pipeline-c-conditional.yml,31961896482,95201001580,SAST (Bandit),completed,success,2026-08-16T17:32:21Z,2026-08-16T17:32:30Z,9.0
+C,pipeline-c-conditional.yml,31961896482,95201001610,SBOM (Syft),completed,success,2026-08-16T17:32:22Z,2026-08-16T17:32:32Z,10.0
+C,pipeline-c-conditional.yml,31961896482,95201001651,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T17:32:22Z,2026-08-16T17:32:37Z,15.0
+C,pipeline-c-conditional.yml,31961896482,95201139000,SonarCloud quality gate,completed,skipped,2026-08-16T17:33:29Z,2026-08-16T17:33:29Z,0.0

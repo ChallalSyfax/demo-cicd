@@ -1,0 +1,67 @@
+strategy,workflow_file,run_id,job_id,job_name,status,conclusion,started_at,completed_at,duration_s
+B,pipeline-b-parallel-cache.yml,31963720188,95205528342,SBOM (Syft),completed,success,2026-08-16T18:08:53Z,2026-08-16T18:09:01Z,8.0
+B,pipeline-b-parallel-cache.yml,31963720188,95205528380,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:08:54Z,2026-08-16T18:09:08Z,14.0
+B,pipeline-b-parallel-cache.yml,31963720188,95205528384,Lint (Ruff),completed,success,2026-08-16T18:08:54Z,2026-08-16T18:09:04Z,10.0
+B,pipeline-b-parallel-cache.yml,31963720188,95205528388,Secret scan (Trivy),completed,success,2026-08-16T18:08:53Z,2026-08-16T18:09:05Z,12.0
+B,pipeline-b-parallel-cache.yml,31963720188,95205528405,Tests + coverage,completed,success,2026-08-16T18:08:54Z,2026-08-16T18:09:58Z,64.0
+B,pipeline-b-parallel-cache.yml,31963720188,95205528421,SAST (Bandit),completed,success,2026-08-16T18:08:54Z,2026-08-16T18:09:07Z,13.0
+B,pipeline-b-parallel-cache.yml,31963666550,95205390945,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:07:47Z,2026-08-16T18:07:58Z,11.0
+B,pipeline-b-parallel-cache.yml,31963666550,95205390947,SBOM (Syft),completed,success,2026-08-16T18:07:47Z,2026-08-16T18:07:57Z,10.0
+B,pipeline-b-parallel-cache.yml,31963666550,95205390952,SAST (Bandit),completed,success,2026-08-16T18:07:47Z,2026-08-16T18:07:58Z,11.0
+B,pipeline-b-parallel-cache.yml,31963666550,95205390962,Tests + coverage,completed,success,2026-08-16T18:07:47Z,2026-08-16T18:08:51Z,64.0
+B,pipeline-b-parallel-cache.yml,31963666550,95205390965,Secret scan (Trivy),completed,success,2026-08-16T18:07:47Z,2026-08-16T18:07:57Z,10.0
+B,pipeline-b-parallel-cache.yml,31963666550,95205391036,Lint (Ruff),completed,success,2026-08-16T18:07:47Z,2026-08-16T18:07:57Z,10.0
+B,pipeline-b-parallel-cache.yml,31963596279,95205209331,Lint (Ruff),completed,success,2026-08-16T18:06:20Z,2026-08-16T18:06:27Z,7.0
+B,pipeline-b-parallel-cache.yml,31963596279,95205209359,SAST (Bandit),completed,success,2026-08-16T18:06:20Z,2026-08-16T18:06:27Z,7.0
+B,pipeline-b-parallel-cache.yml,31963596279,95205209396,Secret scan (Trivy),completed,success,2026-08-16T18:06:21Z,2026-08-16T18:06:34Z,13.0
+B,pipeline-b-parallel-cache.yml,31963596279,95205209425,SBOM (Syft),completed,success,2026-08-16T18:06:20Z,2026-08-16T18:06:31Z,11.0
+B,pipeline-b-parallel-cache.yml,31963596279,95205209461,Tests + coverage,completed,success,2026-08-16T18:06:21Z,2026-08-16T18:07:26Z,65.0
+B,pipeline-b-parallel-cache.yml,31963596279,95205209482,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:06:20Z,2026-08-16T18:06:30Z,10.0
+B,pipeline-b-parallel-cache.yml,31963489384,95204932106,Tests + coverage,completed,success,2026-08-16T18:04:14Z,2026-08-16T18:05:15Z,61.0
+B,pipeline-b-parallel-cache.yml,31963489384,95204932120,SBOM (Syft),completed,success,2026-08-16T18:04:15Z,2026-08-16T18:04:25Z,10.0
+B,pipeline-b-parallel-cache.yml,31963489384,95204932121,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:04:14Z,2026-08-16T18:04:27Z,13.0
+B,pipeline-b-parallel-cache.yml,31963489384,95204932164,Lint (Ruff),completed,success,2026-08-16T18:04:14Z,2026-08-16T18:04:23Z,9.0
+B,pipeline-b-parallel-cache.yml,31963489384,95204932206,SAST (Bandit),completed,success,2026-08-16T18:04:14Z,2026-08-16T18:04:23Z,9.0
+B,pipeline-b-parallel-cache.yml,31963489384,95204932209,Secret scan (Trivy),completed,success,2026-08-16T18:04:14Z,2026-08-16T18:04:29Z,15.0
+B,pipeline-b-parallel-cache.yml,31963411415,95204732548,Lint (Ruff),completed,success,2026-08-16T18:02:41Z,2026-08-16T18:02:47Z,6.0
+B,pipeline-b-parallel-cache.yml,31963411415,95204732560,Secret scan (Trivy),completed,success,2026-08-16T18:02:41Z,2026-08-16T18:02:51Z,10.0
+B,pipeline-b-parallel-cache.yml,31963411415,95204732568,SAST (Bandit),completed,success,2026-08-16T18:02:41Z,2026-08-16T18:02:48Z,7.0
+B,pipeline-b-parallel-cache.yml,31963411415,95204732598,SBOM (Syft),completed,success,2026-08-16T18:02:41Z,2026-08-16T18:02:48Z,7.0
+B,pipeline-b-parallel-cache.yml,31963411415,95204732624,Tests + coverage,completed,success,2026-08-16T18:02:41Z,2026-08-16T18:03:47Z,66.0
+B,pipeline-b-parallel-cache.yml,31963411415,95204732661,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:02:41Z,2026-08-16T18:02:55Z,14.0
+B,pipeline-b-parallel-cache.yml,31963318032,95204500808,SAST (Bandit),completed,success,2026-08-16T18:00:51Z,2026-08-16T18:00:57Z,6.0
+B,pipeline-b-parallel-cache.yml,31963318032,95204500821,SBOM (Syft),completed,success,2026-08-16T18:00:51Z,2026-08-16T18:01:02Z,11.0
+B,pipeline-b-parallel-cache.yml,31963318032,95204500833,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T18:00:51Z,2026-08-16T18:01:05Z,14.0
+B,pipeline-b-parallel-cache.yml,31963318032,95204500848,Secret scan (Trivy),completed,success,2026-08-16T18:00:51Z,2026-08-16T18:01:06Z,15.0
+B,pipeline-b-parallel-cache.yml,31963318032,95204500850,Tests + coverage,completed,success,2026-08-16T18:00:51Z,2026-08-16T18:01:57Z,66.0
+B,pipeline-b-parallel-cache.yml,31963318032,95204500860,Lint (Ruff),completed,success,2026-08-16T18:00:51Z,2026-08-16T18:00:57Z,6.0
+B,pipeline-b-parallel-cache.yml,31963263735,95204371841,Secret scan (Trivy),completed,success,2026-08-16T17:59:54Z,2026-08-16T18:00:09Z,15.0
+B,pipeline-b-parallel-cache.yml,31963263735,95204371860,SBOM (Syft),completed,success,2026-08-16T17:59:54Z,2026-08-16T18:00:05Z,11.0
+B,pipeline-b-parallel-cache.yml,31963263735,95204371867,Tests + coverage,completed,success,2026-08-16T17:59:54Z,2026-08-16T18:00:59Z,65.0
+B,pipeline-b-parallel-cache.yml,31963263735,95204371869,Lint (Ruff),completed,success,2026-08-16T17:59:54Z,2026-08-16T18:00:04Z,10.0
+B,pipeline-b-parallel-cache.yml,31963263735,95204371906,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T17:59:54Z,2026-08-16T18:00:03Z,9.0
+B,pipeline-b-parallel-cache.yml,31963263735,95204371922,SAST (Bandit),completed,success,2026-08-16T17:59:54Z,2026-08-16T18:00:01Z,7.0
+B,pipeline-b-parallel-cache.yml,31963197892,95204216011,Lint (Ruff),completed,success,2026-08-16T17:58:29Z,2026-08-16T17:58:36Z,7.0
+B,pipeline-b-parallel-cache.yml,31963197892,95204216012,Tests + coverage,completed,success,2026-08-16T17:58:30Z,2026-08-16T17:59:19Z,49.0
+B,pipeline-b-parallel-cache.yml,31963197892,95204216055,SAST (Bandit),completed,success,2026-08-16T17:58:30Z,2026-08-16T17:58:42Z,12.0
+B,pipeline-b-parallel-cache.yml,31963197892,95204216109,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T17:58:31Z,2026-08-16T17:58:46Z,15.0
+B,pipeline-b-parallel-cache.yml,31963197892,95204216112,Secret scan (Trivy),completed,success,2026-08-16T17:58:30Z,2026-08-16T17:58:46Z,16.0
+B,pipeline-b-parallel-cache.yml,31963197892,95204216134,SBOM (Syft),completed,success,2026-08-16T17:58:30Z,2026-08-16T17:58:40Z,10.0
+B,pipeline-b-parallel-cache.yml,31963102024,95203990901,Tests + coverage,completed,success,2026-08-16T17:56:33Z,2026-08-16T17:57:23Z,50.0
+B,pipeline-b-parallel-cache.yml,31963102024,95203990915,Lint (Ruff),completed,success,2026-08-16T17:56:33Z,2026-08-16T17:56:45Z,12.0
+B,pipeline-b-parallel-cache.yml,31963102024,95203990920,SAST (Bandit),completed,success,2026-08-16T17:56:33Z,2026-08-16T17:56:45Z,12.0
+B,pipeline-b-parallel-cache.yml,31963102024,95203990943,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T17:56:33Z,2026-08-16T17:56:45Z,12.0
+B,pipeline-b-parallel-cache.yml,31963102024,95203990952,Secret scan (Trivy),completed,success,2026-08-16T17:56:33Z,2026-08-16T17:56:48Z,15.0
+B,pipeline-b-parallel-cache.yml,31963102024,95203990986,SBOM (Syft),completed,success,2026-08-16T17:56:33Z,2026-08-16T17:56:43Z,10.0
+B,pipeline-b-parallel-cache.yml,31963002690,95203757282,SAST (Bandit),completed,success,2026-08-16T17:54:32Z,2026-08-16T17:54:41Z,9.0
+B,pipeline-b-parallel-cache.yml,31963002690,95203757290,Secret scan (Trivy),completed,success,2026-08-16T17:54:32Z,2026-08-16T17:54:41Z,9.0
+B,pipeline-b-parallel-cache.yml,31963002690,95203757293,Lint (Ruff),completed,success,2026-08-16T17:54:33Z,2026-08-16T17:54:45Z,12.0
+B,pipeline-b-parallel-cache.yml,31963002690,95203757328,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T17:54:32Z,2026-08-16T17:54:45Z,13.0
+B,pipeline-b-parallel-cache.yml,31963002690,95203757342,SBOM (Syft),completed,success,2026-08-16T17:54:32Z,2026-08-16T17:54:40Z,8.0
+B,pipeline-b-parallel-cache.yml,31963002690,95203757343,Tests + coverage,completed,success,2026-08-16T17:54:32Z,2026-08-16T17:55:35Z,63.0
+B,pipeline-b-parallel-cache.yml,31961884615,95200974760,SCA — vulnerability scan (Trivy fs),completed,success,2026-08-16T17:32:08Z,2026-08-16T17:32:17Z,9.0
+B,pipeline-b-parallel-cache.yml,31961884615,95200974766,SAST (Bandit),completed,success,2026-08-16T17:32:08Z,2026-08-16T17:32:20Z,12.0
+B,pipeline-b-parallel-cache.yml,31961884615,95200974794,Tests + coverage,completed,success,2026-08-16T17:32:08Z,2026-08-16T17:33:14Z,66.0
+B,pipeline-b-parallel-cache.yml,31961884615,95200974806,Lint (Ruff),completed,success,2026-08-16T17:32:08Z,2026-08-16T17:32:21Z,13.0
+B,pipeline-b-parallel-cache.yml,31961884615,95200974820,SBOM (Syft),completed,success,2026-08-16T17:32:08Z,2026-08-16T17:32:15Z,7.0
+B,pipeline-b-parallel-cache.yml,31961884615,95200975088,Secret scan (Trivy),completed,success,2026-08-16T17:32:09Z,2026-08-16T17:32:22Z,13.0

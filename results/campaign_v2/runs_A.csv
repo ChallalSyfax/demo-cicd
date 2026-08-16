@@ -1,0 +1,11 @@
+strategy,workflow_file,run_id,run_number,run_attempt,event,head_branch,status,conclusion,created_at,run_started_at,updated_at,duration_total_s,billable_minutes_linux
+A,pipeline-a-sequential.yml,31963653085,31,1,workflow_dispatch,v2-devsecops,completed,success,2026-08-16T18:07:29Z,2026-08-16T18:07:29Z,2026-08-16T18:08:45Z,76.0,2
+A,pipeline-a-sequential.yml,31963580546,30,1,workflow_dispatch,v2-devsecops,completed,success,2026-08-16T18:06:00Z,2026-08-16T18:06:00Z,2026-08-16T18:07:08Z,68.0,2
+A,pipeline-a-sequential.yml,31963476259,29,1,workflow_dispatch,v2-devsecops,completed,success,2026-08-16T18:03:56Z,2026-08-16T18:03:56Z,2026-08-16T18:05:13Z,77.0,2
+A,pipeline-a-sequential.yml,31963399570,28,1,workflow_dispatch,v2-devsecops,completed,success,2026-08-16T18:02:24Z,2026-08-16T18:02:24Z,2026-08-16T18:03:38Z,74.0,2
+A,pipeline-a-sequential.yml,31963304599,27,1,workflow_dispatch,v2-devsecops,completed,success,2026-08-16T18:00:33Z,2026-08-16T18:00:33Z,2026-08-16T18:01:55Z,82.0,2
+A,pipeline-a-sequential.yml,31963254344,26,1,workflow_dispatch,v2-devsecops,completed,success,2026-08-16T17:59:39Z,2026-08-16T17:59:39Z,2026-08-16T18:01:09Z,90.0,2
+A,pipeline-a-sequential.yml,31963186232,25,1,workflow_dispatch,v2-devsecops,completed,success,2026-08-16T17:58:13Z,2026-08-16T17:58:13Z,2026-08-16T17:59:27Z,74.0,2
+A,pipeline-a-sequential.yml,31963088865,24,1,workflow_dispatch,v2-devsecops,completed,success,2026-08-16T17:56:14Z,2026-08-16T17:56:14Z,2026-08-16T17:57:44Z,90.0,2
+A,pipeline-a-sequential.yml,31962994304,23,1,workflow_dispatch,v2-devsecops,completed,success,2026-08-16T17:54:16Z,2026-08-16T17:54:16Z,2026-08-16T17:55:34Z,78.0,2
+A,pipeline-a-sequential.yml,31961539549,22,1,workflow_dispatch,v2-devsecops,completed,success,2026-08-16T17:25:08Z,2026-08-16T17:25:08Z,2026-08-16T17:28:27Z,199.0,4
