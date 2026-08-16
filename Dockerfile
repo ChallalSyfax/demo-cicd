@@ -13,9 +13,10 @@ FROM python:3.11-slim-bookworm AS runtime
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 COPY --from=builder /install /usr/local
-RUN useradd --create-home --uid 10001 appuser
 WORKDIR /app
 COPY app/ ./app/
-USER appuser
+# Non-root par UID numérique : pas besoin de créer l'utilisateur (évite une
+# couche RUN qui exigerait root, et rend le build compatible rootless).
+USER 10001:10001
 EXPOSE 8000
 CMD ["uvicorn", "app.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000"]
