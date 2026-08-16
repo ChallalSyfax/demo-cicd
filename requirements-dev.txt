@@ -1,7 +1,9 @@
-# Dépendances de développement et d'outillage (tests, couverture, qualité).
+# Dépendances de développement et d'outillage (tests, couverture, qualité, sécurité).
 # Inclut les dépendances runtime.
 -r requirements.txt
 
-pytest==8.3.3
-pytest-cov==5.0.0
-ruff==0.6.9
+pytest==8.3.4
+pytest-cov==6.0.0
+ruff==0.8.4
+bandit==1.8.0
+httpx==0.28.1

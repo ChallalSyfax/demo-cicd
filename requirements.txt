@@ -1,3 +1,6 @@
 # Dépendances d'exécution (runtime).
 # Versions épinglées pour garantir des mesures reproductibles.
-Flask==3.0.3
+# (Le verrou complet, transitif et haché, est produit dans requirements-lock.txt.)
+fastapi==0.115.6
+uvicorn==0.34.0
+python-multipart==0.0.20
