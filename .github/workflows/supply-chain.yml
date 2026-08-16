@@ -1,0 +1,121 @@
+# Couche 2 — chaîne d'approvisionnement (NON chronométrée, démontrée une fois).
+#
+# Pour chaque variante d'image (slim, distroless) :
+#   build multi-stage -> push GHCR par digest -> scan d'image (Trivy)
+#   -> signature keyless (Cosign) -> provenance SLSA (attestation)
+#   -> VÉRIFICATION d'admission bloquante (cosign verify + gh attestation verify).
+#
+# Ce workflow n'entre PAS dans la campagne de mesure A/B/C : il produit les
+# artefacts de conformité et les données de l'Exp.3 (slim vs distroless).
+
+name: Supply chain (Couche 2)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write        # push vers GHCR
+  id-token: write        # OIDC pour la signature keyless et l'attestation
+  attestations: write    # provenance SLSA
+
+env:
+  IMAGE: ghcr.io/challalsyfax/demo-cicd
+
+jobs:
+  build-sign-verify:
+    name: Build + sign + verify (${{ matrix.variant }})
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: slim
+            dockerfile: Dockerfile
+          - variant: distroless
+            dockerfile: Dockerfile.distroless
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push (by digest)
+        id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ${{ matrix.dockerfile }}
+          push: true
+          tags: ${{ env.IMAGE }}:${{ matrix.variant }}
+          provenance: false   # provenance gérée explicitement via attest-build-provenance
+
+      - name: Image scan (Trivy)
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: image
+          image-ref: ${{ env.IMAGE }}@${{ steps.build.outputs.digest }}
+          format: json
+          output: trivy-image-${{ matrix.variant }}.json
+          severity: CRITICAL,HIGH,MEDIUM,LOW
+          exit-code: "0"
+
+      - name: Image size (bytes)
+        run: |
+          docker pull "${IMAGE}@${DIGEST}"
+          SIZE=$(docker image inspect "${IMAGE}@${DIGEST}" --format '{{.Size}}')
+          echo "variant=${VARIANT} size_bytes=${SIZE}"
+          echo "${VARIANT},${SIZE}" > image-size-${VARIANT}.csv
+        env:
+          IMAGE: ${{ env.IMAGE }}
+          DIGEST: ${{ steps.build.outputs.digest }}
+          VARIANT: ${{ matrix.variant }}
+
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@v3.7.0
+
+      - name: Sign image (keyless)
+        run: cosign sign --yes "${IMAGE}@${DIGEST}"
+        env:
+          IMAGE: ${{ env.IMAGE }}
+          DIGEST: ${{ steps.build.outputs.digest }}
+
+      - name: SLSA build provenance attestation
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: ${{ env.IMAGE }}
+          subject-digest: ${{ steps.build.outputs.digest }}
+          push-to-registry: true
+
+      - name: Admission verification (bloquante)
+        run: |
+          echo "== cosign verify (identité OIDC du dépôt) =="
+          cosign verify "${IMAGE}@${DIGEST}" \
+            --certificate-identity-regexp "^https://github.com/ChallalSyfax/demo-cicd/" \
+            --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+            > /dev/null
+          echo "== gh attestation verify (provenance SLSA) =="
+          gh attestation verify "oci://${IMAGE}@${DIGEST}" --owner ChallalSyfax
+        env:
+          IMAGE: ${{ env.IMAGE }}
+          DIGEST: ${{ steps.build.outputs.digest }}
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Upload supply-chain reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: supply-chain-${{ matrix.variant }}
+          path: |
+            trivy-image-${{ matrix.variant }}.json
+            image-size-${{ matrix.variant }}.csv
+          if-no-files-found: warn
+          retention-days: 30

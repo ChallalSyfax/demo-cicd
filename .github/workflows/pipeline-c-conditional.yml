@@ -1,15 +1,14 @@
 # Pipeline C — stratégie conditionnelle multi-niveaux.
 #
-# Objectif : adapter le niveau de contrôle au contexte (et non seulement
-# accélérer). Le travail logique reste celui de A et B ; ce qui change, c'est
-# QUELS jobs s'exécutent selon l'événement déclencheur.
+# Le travail logique reste celui de A/B ; ce qui change, c'est QUELS contrôles
+# s'exécutent selon le contexte :
+#   - pull_request (vers main) : contrôles RAPIDES (test, lint, SAST) + quality
+#     gate SonarCloud BLOQUANT. Les contrôles lourds (secret, SBOM, SCA) sont
+#     DIFFÉRÉS -> c'est la « fenêtre d'exposition » étudiée à l'Exp.2.
+#   - push sur main / workflow_dispatch : chaîne Couche 1 COMPLÈTE.
 #
-#   - pull_request (vers main) : contrôles rapides  -> test, lint, sonar
-#   - push sur main            : chaîne complète     -> test, lint, sonar, sbom, trivy
-#   - workflow_dispatch        : chaîne complète     -> idem (campagnes de mesure)
-#
-# En mode workflow_dispatch, C exécute exactement le même ensemble logique que
-# A et B, ce qui garantit une comparaison honnête entre les trois stratégies.
+# En workflow_dispatch, C exécute le même ensemble Couche 1 que A et B, ce qui
+# garantit une comparaison honnête entre les trois stratégies.
 
 name: Pipeline C - Conditional
 
@@ -24,32 +23,25 @@ permissions:
   contents: read
 
 jobs:
-  # --- Contrôles rapides : exécutés dans TOUS les contextes --------------------
-
+  # --- Contrôles rapides : TOUS les contextes ---------------------------------
   test:
     name: Tests + coverage
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Python (with pip cache)
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: pip
           cache-dependency-path: requirements-dev.txt
-
-      - name: Install dependencies
-        run: |
+      - run: |
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
-
-      - name: Run tests with coverage
+      - name: Tests + coverage
+        env:
+          CALIBRATION_N: "60000"   # ~20 s de charge déterministe (voir pipeline A)
         run: pytest
-
-      - name: Upload coverage report
-        if: always()
+      - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
@@ -59,71 +51,93 @@ jobs:
 
   lint:
     name: Lint (Ruff)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Python (with pip cache)
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: pip
           cache-dependency-path: requirements-dev.txt
-
-      - name: Install Ruff
-        run: |
+      - run: |
           python -m pip install --upgrade pip
-          pip install ruff==0.6.9
+          pip install ruff==0.8.4
+      - run: ruff check .
 
-      - name: Lint with Ruff
-        run: ruff check .
+  sast:
+    name: SAST (Bandit)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: |
+          python -m pip install --upgrade pip
+          pip install bandit==1.8.0
+      - run: bandit -r app -q
 
+  # --- Quality gate BLOQUANT (sonar.qualitygate.wait=true) --------------------
   sonar:
-    name: SonarCloud analysis
-    runs-on: ubuntu-latest
+    name: SonarCloud quality gate
+    runs-on: ubuntu-24.04
     needs: test
-
-    # Défini au niveau du job : le bloc env: d'une étape n'est pas visible
-    # depuis le if: de cette même étape.
+    # Gate uniquement sur pull_request : ainsi le service externe SonarCloud
+    # n'entre pas dans le chronométrage de la campagne (workflow_dispatch),
+    # ce qui garantit une comparaison A/B/C sur le même travail Couche 1.
+    if: github.event_name == 'pull_request'
     env:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Download coverage report
         uses: actions/download-artifact@v4
         with:
           name: coverage-report
-
-      # Sautée proprement tant que SONAR_TOKEN n'est pas configuré.
-      - name: SonarCloud analysis
+      # Sautée proprement si le secret n'est pas configuré (mais le gate exige le token).
+      - name: SonarCloud analysis (blocking gate)
         if: env.SONAR_TOKEN != ''
         uses: SonarSource/sonarcloud-github-action@v3.1.0
 
-  # --- Contrôles lourds : uniquement sur push main ou lancement manuel ---------
+  # --- Contrôles lourds : différés hors pull_request --------------------------
+  secret:
+    name: Secret scan (Trivy)
+    runs-on: ubuntu-24.04
+    if: github.event_name != 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: fs
+          scan-ref: "."
+          scanners: secret
+          format: json
+          output: trivy-secret.json
+          exit-code: "0"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-secret
+          path: trivy-secret.json
+          if-no-files-found: warn
+          retention-days: 30
 
   sbom:
     name: SBOM (Syft)
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    if: github.event_name != 'pull_request'
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Generate SBOM (Syft)
-        uses: anchore/sbom-action@v0.17.2
+      - uses: actions/checkout@v4
+      - uses: anchore/sbom-action@v0.17.2
         with:
           path: "."
           format: cyclonedx-json
           output-file: sbom.cyclonedx.json
-
-      - name: Upload SBOM
-        if: always()
+      - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: sbom
@@ -132,16 +146,12 @@ jobs:
           retention-days: 30
 
   trivy:
-    name: Vulnerability scan (Trivy)
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    name: SCA — vulnerability scan (Trivy fs)
+    runs-on: ubuntu-24.04
+    if: github.event_name != 'pull_request'
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      # Posture "observation" : exit-code 0 => produit toujours le rapport.
-      - name: Vulnerability scan (Trivy)
-        uses: aquasecurity/trivy-action@v0.36.0
+      - uses: actions/checkout@v4
+      - uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: fs
           scan-ref: "."
@@ -150,9 +160,7 @@ jobs:
           output: trivy-fs.json
           severity: CRITICAL,HIGH,MEDIUM,LOW
           exit-code: "0"
-
-      - name: Upload Trivy report
-        if: always()
+      - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: trivy-report

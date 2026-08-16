@@ -1,8 +1,9 @@
-# Pipeline A — stratégie séquentielle (baseline de référence).
+# Pipeline A — stratégie séquentielle (baseline), Couche 1 (chronométrée).
 #
-# Objectif : exécuter toutes les étapes DevSecOps dans un seul job, dans l'ordre,
-# sans aucune optimisation (pas de cache, pas de parallélisation). Ce workflow sert
-# de point de comparaison pour les stratégies B (parallèle + cache) et C (conditionnel).
+# Tous les contrôles déterministes s'enchaînent dans UN seul job, sans cache ni
+# parallélisme : c'est le point de comparaison des stratégies B et C.
+# SonarCloud (service externe) et la Couche 2 (image, signature) sont EXCLUS du
+# chronométrage : ils vivent ailleurs (gate PR de C ; workflow supply-chain).
 #
 # Déclenchement manuel uniquement, pour maîtriser les runs de mesure.
 
@@ -16,60 +17,53 @@ permissions:
 
 jobs:
   pipeline:
-    name: Sequential DevSecOps pipeline
-    runs-on: ubuntu-latest
-
-    # Défini au niveau du job : le bloc env: d'une étape n'est pas visible
-    # depuis le if: de cette même étape (cf. étape SonarCloud plus bas).
-    env:
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
+    name: Sequential DevSecOps (Couche 1)
+    runs-on: ubuntu-24.04
     steps:
-      # 1. Récupération du code (fetch-depth: 0 requis pour une analyse Sonar correcte).
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      # 2. Mise en place de Python (version alignée sur l'environnement local).
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      # 3. Installation des dépendances (aucun cache : c'est volontaire pour la baseline).
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
 
-      # 4. Tests + couverture (génère coverage.xml, consommé ensuite par SonarCloud).
-      - name: Run tests with coverage
-        run: pytest
-
-      # 5. Contrôle qualité local rapide (barrière : fait échouer le build si non conforme).
-      - name: Lint with Ruff
+      - name: Lint (Ruff)
         run: ruff check .
 
-      # 6. Analyse SonarCloud.
-      #    Sautée proprement tant que le secret SONAR_TOKEN n'est pas configuré,
-      #    afin de ne pas bloquer les premiers runs.
-      - name: SonarCloud analysis
-        if: env.SONAR_TOKEN != ''
-        uses: SonarSource/sonarcloud-github-action@v3.1.0
+      - name: SAST (Bandit)
+        run: bandit -r app -q
 
-      # 7. Génération du SBOM avec Syft (format CycloneDX JSON).
-      - name: Generate SBOM (Syft)
+      - name: Tests + coverage
+        env:
+          CALIBRATION_N: "60000"   # charge déterministe (~20 s) : allonge le job de test
+          # Réglable : ~0,32 ms/contrat. À affiner par un pilote (viser un job test
+          # assez long pour que la parallélisation de B produise un gain observable).
+        run: pytest
+
+      - name: Secret scan (Trivy)
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: fs
+          scan-ref: "."
+          scanners: secret
+          format: json
+          output: trivy-secret.json
+          exit-code: "0"
+
+      - name: SBOM (Syft)
         uses: anchore/sbom-action@v0.17.2
         with:
           path: "."
           format: cyclonedx-json
           output-file: sbom.cyclonedx.json
 
-      # 8. Scan de vulnérabilités Trivy sur le filesystem / les dépendances.
-      #    Posture "observation" : exit-code 0 => produit toujours le rapport sans
-      #    casser le build. Le durcissement (échec sur CRITICAL) sera une amélioration.
-      - name: Vulnerability scan (Trivy)
+      - name: SCA — vulnerability scan (Trivy fs)
         uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: fs
@@ -80,7 +74,6 @@ jobs:
           severity: CRITICAL,HIGH,MEDIUM,LOW
           exit-code: "0"
 
-      # 9. Archivage des rapports produits (if: always() => même si une étape a échoué).
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -90,5 +83,6 @@ jobs:
             coverage.xml
             sbom.cyclonedx.json
             trivy-fs.json
+            trivy-secret.json
           if-no-files-found: warn
           retention-days: 30
