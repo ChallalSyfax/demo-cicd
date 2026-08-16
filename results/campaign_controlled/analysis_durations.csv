@@ -1,0 +1,3 @@
+comparison,p_value,p_holm,significant_5pct,cliffs_delta,effect_magnitude,ci95_low_s,ci95_high_s
+A vs B,0.306396,0.394484,False,0.2800,petite,-3.50,13.50
+A vs C,0.197242,0.394484,False,0.3500,moyenne,-2.50,11.00

@@ -1,0 +1,4 @@
+# Dépendances de l'analyse statistique (scripts/analyze_durations.py).
+# Séparées de l'outillage de test pour garder l'environnement CI léger.
+numpy==2.2.1
+scipy==1.15.0
