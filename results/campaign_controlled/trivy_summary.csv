@@ -1,4 +1,0 @@
-strategy,n_reports,unknown_mean,low_mean,medium_mean,high_mean,critical_mean,total_mean,total_min,total_max
-A,10,0,1,0,0,0,1,1,1
-B,10,0,1,0,0,0,1,1,1
-C,10,0,1,0,0,0,1,1,1
